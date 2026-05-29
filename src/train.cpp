@@ -50,7 +50,7 @@ int Train::getLength() {
         ++length;
         if (current->light) {
             break;
-        } } else {
+        } else {
             current->light = false;
         }
     }
