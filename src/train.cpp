@@ -1,15 +1,6 @@
 // Copyright 2021 NNTU-CS
 #include "train.h"
 Train::Train() : first(nullptr), countOp(0) {}
-Train::~Train() {
-    if (!first) return;
-    Car* cur = first;
-    do {
-        Car* next = cur->next;
-        delete cur;
-        cur = next;
-    } while (cur != first);
-}
 void Train::addCar(bool light) {
     Car* newCar = new Car(light);
     if (!first) {
@@ -43,6 +34,6 @@ int Train::getLength() {
     }
     return steps;
 }
-int Train::getOpCount() const {
+int Train::getOpCount() {
     return countOp;
 }
